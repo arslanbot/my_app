@@ -10,6 +10,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+      - run: sudo apt-get update && sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config make gcc cmake zlib1g-dev
       - run: pip install buildozer
       - run: buildozer android debug
       - uses: actions/upload-artifact@v4
